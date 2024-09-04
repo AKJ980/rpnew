@@ -1,0 +1,18 @@
+name <- c("abhishek","sudeep","anand","sachin");
+age <- c(12,3,4,5)
+height <- c(122,211,345,124)
+weight <- c(56,67,45,23)
+gender <- c("f","m","f","m")
+data <- data.frame(Name=name , Age=age,Height=height,Weight=weight,Gender=gender)
+data$Gender <- as.factor(data$Gender)
+library(dplyr)
+data$Gender <- recode(data$Gender,"m"="f" , "f"="m")
+print(data)
+str(data)
+working <- c("y","n","y","n","y","n")
+df2 <- data.frame(working)
+df <- cbind(data,df2)
+dim(df)
+column_classes <- sapply(df,class)
+column_classes
+print(df)
